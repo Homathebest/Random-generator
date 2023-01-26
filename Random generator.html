@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function randomNumber(min, max) {
+    min = parseInt(min);
+    max = parseInt(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+</script>
+</head>
+<body>
+
+<input type="text" id="minValue">
+<input type="text" id="maxValue">
+<button onclick="generateRandom()">Generate</button>
+<p id="result"></p>
+
+<script>
+function generateRandom() {
+    var min = document.getElementById("minValue").value;
+    var max = document.getElementById("maxValue").value;
+    var result = document.getElementById("result");
+    var timestamp = new Date();
+
+    result.innerHTML = "Random number: " + randomNumber(min, max) + "<br> Timestamp: " + timestamp;
+}
+</script>
+
+</body>
+</html>
